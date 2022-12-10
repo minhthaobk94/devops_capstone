@@ -39,7 +39,7 @@ workflows:
       - docker/publish:
           matrix:
             parameters:
-              image: [thaoapp]
+              image: [$DOCKER_LOGIN/thaoapp]
               path: [thaoapp]
               docker-context: [thaoapp]
               deploy: [true]
@@ -47,6 +47,6 @@ workflows:
               # - numbered version
               # - "latest"
               # tag: ['$(<hello_app/VERSION.txt)-${CIRCLE_SHA1:0:7}', 'latest']
-              tag: ['1.000']
+              tag: ['$(<thaoapp/VERSION.txt)', 'latest']
               update-description: [true]    
           requires: [init]
