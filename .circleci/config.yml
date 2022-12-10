@@ -39,7 +39,7 @@ workflows:
       - docker/publish:
           matrix:
             parameters:
-              image: [$DOCKER_LOGIN/thaoapp]
+              image: [thaoapp]
               path: [thaoapp]
               docker-context: [thaoapp]
               deploy: [true]
