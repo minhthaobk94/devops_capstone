@@ -40,7 +40,7 @@ workflows:
           matrix:
             parameters:
               image: [$DOCKER_LOGIN/thaoapp]
-              path: [thaoapp]
+              dockerfile: [thaoapp/Dockerfile]
               deploy: [true]
               registry: [hub.docker.com]
               # We publish two images with different version tags: 
