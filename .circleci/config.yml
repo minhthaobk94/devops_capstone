@@ -41,8 +41,8 @@ workflows:
             parameters:
               image: [$DOCKER_LOGIN/thaoapp]
               path: [thaoapp]
-              docker-context: [thaoapp]
               deploy: [true]
+              registry: [hub.docker.com]
               # We publish two images with different version tags: 
               # - numbered version
               # - "latest"
