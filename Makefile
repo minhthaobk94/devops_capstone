@@ -15,7 +15,7 @@ setup:
 install:
 	# this should be run from inside a virtualenv
 	echo "Installing dependencies..."
-	# pip install --upgrade pip && pip install -r thaoapp/requirements.txt
+	pip install --upgrade pip && pip install -r thaoapp/requirements.txt
 	echo
 	pytest --version
 	echo
