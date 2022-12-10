@@ -30,6 +30,7 @@ jobs:
           command: |
             source venv/bin/activate
             make lint
+
   build-docker:
     executor: docker/machine
     steps:
@@ -47,4 +48,4 @@ workflows:
     jobs:
       - init        
       - build-docker:
-        requires: [init]
+          requires: [init]
