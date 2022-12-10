@@ -37,13 +37,6 @@ workflows:
     jobs:
       - init        
       - docker/publish:
-          matrix:
-            parameters:
-              image: minhthaobk94/thaoapp
-              # We publish two images with different version tags: 
-              # - numbered version
-              # - "latest"
-              # tag: ['$(<thaoapp/VERSION.txt)-${CIRCLE_SHA1:0:7}', 'latest']
-              #tag: ['1.000']
-              update-description: true
+          image: minhthaobk94/thaoapp
+          update-description: true
           requires: [init]
