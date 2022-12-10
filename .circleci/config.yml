@@ -47,6 +47,6 @@ workflows:
               # - numbered version
               # - "latest"
               # tag: ['$(<thaoapp/VERSION.txt)-${CIRCLE_SHA1:0:7}', 'latest']
-              tag: ['1.000', 'latest']
+              tag: ['1.000']
               update-description: [true]    
           requires: [init]
