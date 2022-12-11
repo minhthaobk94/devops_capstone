@@ -1,6 +1,9 @@
 # Udacity AWS DevOps Engineer Capstone Project
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/minhthaobk94/devops_capstone/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/minhthaobk94/devops_capstone/tree/master)
 
+# https://hub.docker.com/r/minhthaobk94/thaoapp/tags
+
+
 ## Project Overview
 
 This capstone project showcases the use of several CI/CD tools and cloud services covered in the program [Udacity - AWS Cloud DevOps Engineer.](https://www.udacity.com/course/cloud-dev-ops-nanodegree--nd9991)
