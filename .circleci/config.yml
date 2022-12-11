@@ -48,5 +48,5 @@ workflows:
               # - "latest"
               # tag: ['$(<hello_app/VERSION.txt)-${CIRCLE_SHA1:0:7}', 'latest']
               tag: ['$(<thaoapp/VERSION.txt)', 'latest']
-              update-description: [true]    
+              # update-description: [true]    
           requires: [init]
