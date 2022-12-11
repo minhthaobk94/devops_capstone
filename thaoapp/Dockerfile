@@ -17,4 +17,4 @@ RUN pip install  --no-cache-dir --upgrade pip && \
 EXPOSE 80
 
 # Run app at container launch
-CMD ["python", "thaoapp.py"]
+CMF ["python", "thaoapp.py"]
