@@ -5,19 +5,19 @@ DEPLOYMENT_NAME="thaoapp"
 # Remove service & deployment
 echo
 echo "Deleting service: ${DEPLOYMENT_NAME}"
-kubectl delete services ${DEPLOYMENT_NAME}
+./bin/kubectl delete services ${DEPLOYMENT_NAME}
 
 echo
 echo "Deleting deployment: ${DEPLOYMENT_NAME}"
-kubectl delete deployments ${DEPLOYMENT_NAME}
+./bin/kubectl delete deployments ${DEPLOYMENT_NAME}
 
 # Show cluster's resources
 echo
 echo "Listing services"
-kubectl get services
+./bin/kubectl get services
 echo
 echo "Listing deployments"
-kubectl get deployments
+./bin/kubectl get deployments
 echo
 echo "Listting pods"
-kubectl get pods
+./bin/kubectl get pods

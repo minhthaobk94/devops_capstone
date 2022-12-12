@@ -1,5 +1,8 @@
 apiVersion: eksctl.io/v1alpha5
 kind: ClusterConfig
+availabilityZones:
+  - us-east-1a
+  - us-east-1c
 
 metadata:
   name: thaoapp
@@ -18,5 +21,4 @@ nodeGroups:
     volumeSize: 80
     ssh:
       allow: true
-      publicKeyName: udacity
-
+      publicKeyName: devops_capstone

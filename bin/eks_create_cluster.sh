@@ -4,7 +4,7 @@ CLUSTER="thaoapp"
 REGION="us-east-1"
 CLUSTER_NAME="${CLUSTER}.${REGION}.eksctl.io"
 
-if kubectl config get-clusters | grep -q ${CLUSTER_NAME}; then
+if ./bin/kubectl config get-clusters | grep -q ${CLUSTER_NAME}; then
     echo
     echo "Cluster '${CLUSTER_NAME}' already exists!"
     echo

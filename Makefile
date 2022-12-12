@@ -1,7 +1,7 @@
 #Vars
 CLUSTER_NAME=thaoapp
 REGION_NAME=us-east-1
-KEYPAIR_NAME=udacity
+KEYPAIR_NAME=devops_capstone
 DEPLOYMENT_NAME=thaoapp
 NEW_IMAGE_NAME=registry.hub.docker.com/minhthaobk94/thaoapp:latest
 CONTAINER_PORT=80
@@ -58,7 +58,7 @@ ci-validate:
 	# Required file: .circleci/config.yml
 	circleci config validate
 
-k8s-deployment: eks-create-cluster
+k8s-deployment:
 	# If using minikube, first run: minikube start
 	./bin/k8s_deployment.sh
 
