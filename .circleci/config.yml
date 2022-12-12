@@ -54,14 +54,15 @@ jobs:
   
   deploy-app:
     docker:
-      - image: cimg/base:stable
+      - image: cimg/python:3.7.3
     steps:
       - checkout
       - install_awscli
       - run:
           name: Install dependencies
           command: |
-            python3 -m venv venv
+            python --version
+            python -m venv venv
             source venv/bin/activate
             make install
             make k8s-deployment
