@@ -1,5 +1,26 @@
 version: 2.1
 
+commands:
+  install_awscli:
+    description: Install AWS CLI v2
+    steps:
+      - run:
+          name: Install AWS CLI v2
+          command: |
+            curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+            unzip awscliv2.zip
+            sudo ./aws/install
+  install_ansible:
+    description: Install Ansible
+    steps:
+      - run:
+          name: Install Ansible
+          command: |
+            sudo apt update
+            sudo apt install software-properties-common -y
+            sudo add-apt-repository --yes --update ppa:ansible/ansible
+            sudo apt install ansible -y
+
 orbs:
   docker: circleci/docker@2.2.0
 
@@ -30,6 +51,20 @@ jobs:
           command: |
             source venv/bin/activate
             make lint
+  
+  deploy-app:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - checkout
+      - install_awscli
+      - run:
+          name: Install dependencies
+          command: |
+            python3 -m venv venv
+            source venv/bin/activate
+            make install
+            make k8s-deployment
 
 
 workflows:
@@ -50,3 +85,5 @@ workflows:
               tag: ['$(<thaoapp/VERSION.txt)', 'latest']
               # update-description: [true]    
           requires: [init]
+      - deploy-app:
+          requires: [docker/publish]
