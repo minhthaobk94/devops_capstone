@@ -65,7 +65,8 @@ jobs:
             python -m venv venv
             source venv/bin/activate
             make install
-            make k8s-deployment
+            # make k8s-deployment
+            echo "Uncomment the above line and remove this line when having AWS resources"
 
 
 workflows:
